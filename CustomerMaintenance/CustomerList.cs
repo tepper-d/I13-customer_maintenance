@@ -34,6 +34,10 @@ using System.Text;
  *    class.
  *    a. method with void return type
  *    b. CustomerList parameter
+ * 
+ * 3. Add Changed event to CustomerList class.
+ *    a. use ChangeHandler delegate
+ *    b. raised when customer list is changed
  * ************************************************/
 
 namespace CustomerMaintenance
@@ -68,18 +72,31 @@ namespace CustomerMaintenance
 			set
 			{
 				customers[i] = value;
+
+				//Ex13-3.3b
+				//Tepper, 17JUN2022
+				Changed(this);
 			}
 		}
 		//6d-1. Add(customer)
 		public void Add(Customer customer)
 		{
 			customers.Add(customer);
+
+			//Ex13-3.3a,b
+			//Tepper, 17JUN2022
+			Changed(this);
+
 		}
 
 		//6d-2. Remove(customer)
 		public void Remove(Customer customer)
 		{
 			customers.Remove(customer);
+
+			//Ex13-3.3a,b
+			//Tepper, 17JUN2022
+			Changed(this);
 		}
 
 		//6d-3. Fill()
