@@ -20,6 +20,12 @@ using System.Windows.Forms;
  * 7b. Use CustomerList object Fill()
  * 7c. Use CustomerList object Save()
  * 7d. Use a for loop instead of foreach
+ * 
+ * Exercise 13-2
+ * 3. Modify frmCustomer to use operator instead of
+ *    methods
+ *    a. Add()
+ *    b. Remove()
  * ************************************************/
 
 namespace CustomerMaintenance
