@@ -8,6 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* ************************************************
+ * CIS123: Intro to Object-oriented Programming
+ * Murach C#, 7th ed. pp. 456 - 458
+ * Chapter 13: How to work with indexers
+ *    delegates, events & operators
+ * Dominique Tepper, 17JUN2022
+ * 
+ * Exercise 13-1
+ * 7a. Modify frmCustomers to use CustomerList class.
+ * 7b. Use CustomerList object Fill()
+ * 7c. Use CustomerList object Save()
+ * 7d. Use a for loop instead of foreach
+ * ************************************************/
+
 namespace CustomerMaintenance
 {
     public partial class frmCustomers : Form
@@ -17,19 +31,26 @@ namespace CustomerMaintenance
             InitializeComponent();
         }
 
-        private List<Customer> customers = null;
+        //7a. Modify frmCustomers to use CustomerList class.
+        private CustomerList customers = new CustomerList();
 
         private void frmCustomers_Load(object sender, EventArgs e)
         {
-            customers = CustomerDB.GetCustomers();
+            //7b.Use CustomerList object Fill()
+            //Tepper, 17JUN2022
+            customers.Fill();
             FillCustomerListBox();
         }
 
         private void FillCustomerListBox()
         {
             lstCustomers.Items.Clear();
-            foreach (Customer c in customers)
+
+            //7d.Use a for loop instead of foreach
+            //Tepper, 17JUN2022
+            for (int i = 0; i < customers.Count; i++)
             {
+                Customer c = customers[i];
                 lstCustomers.Items.Add(c.GetDisplayText());
             }
         }
@@ -41,7 +62,11 @@ namespace CustomerMaintenance
             if (customer != null)
             {
                 customers.Add(customer);
-                CustomerDB.SaveCustomers(customers);
+
+                //7c.CustomerList object Save()
+                //Tepper, 17JUN2022
+                customers.Save();
+
                 FillCustomerListBox();
             }
         }
@@ -59,7 +84,11 @@ namespace CustomerMaintenance
                 if (button == DialogResult.Yes)
                 {
                     customers.Remove(customer);
-                    CustomerDB.SaveCustomers(customers);
+
+                    //7c.CustomerList object Save()
+                    //Tepper, 17JUN2022
+                    customers.Save();
+                    
                     FillCustomerListBox();
                 }
             }
