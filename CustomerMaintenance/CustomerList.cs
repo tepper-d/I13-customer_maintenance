@@ -76,6 +76,19 @@ namespace CustomerMaintenance
 		//6d-4. Save()
 		public void Save() => CustomerDB.SaveCustomers(customers);
 
+/* ************************************************
+* CIS123: Intro to Object-oriented Programming
+* Murach C#, 7th ed. pp. 456 - 458
+* Chapter 13: How to work with indexers
+*    delegates, events & operators
+* Dominique Tepper, 17JUN2022
+*          
+* Exercise 13-2
+* 2. Add overloaded CustomerList class
+*	  a.	+		adds customers
+*	  b.	-		removes customers
+* ************************************************/
+
 		//13-2.2a. + operator
 		//Tepper, 17JUN2022
 		public static CustomerList operator +(CustomerList c1, Customer c)
