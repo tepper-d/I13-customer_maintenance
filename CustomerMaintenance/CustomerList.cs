@@ -34,6 +34,8 @@ using System.Text;
  *    class.
  *    a. method with void return type
  *    b. CustomerList parameter
+ * 
+ * 3. Add an event Changed to CustomerList class
  * ************************************************/
 
 namespace CustomerMaintenance
