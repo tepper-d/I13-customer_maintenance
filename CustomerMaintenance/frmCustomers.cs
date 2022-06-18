@@ -17,7 +17,7 @@ namespace CustomerMaintenance
             InitializeComponent();
         }
 
-        private List<Customer> customers = null;
+        private CustomerList customers = new CustomerList();
 
         private void frmCustomers_Load(object sender, EventArgs e)
         {
