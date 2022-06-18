@@ -26,6 +26,15 @@ using System.Windows.Forms;
  *    methods
  *    a. Add()
  *    b. Remove()
+ *    
+ * Exercise 13-3
+ * 4. Modify frmCustomer to use Changed event
+ *    a. code an event handler with the delegate's
+ *       signature
+ *    b. wire the event handler to new event
+ *    c. remove unnecessary code
+ *         1. Add
+ *         2. Delete
  * ************************************************/
 
 namespace CustomerMaintenance
@@ -42,6 +51,9 @@ namespace CustomerMaintenance
 
         private void frmCustomers_Load(object sender, EventArgs e)
         {
+            //Ex13-3.4a
+            customers.Changed += customers =>
+
             //7b.Use CustomerList object Fill()
             //Tepper, 17JUN2022
             customers.Fill();
@@ -86,9 +98,9 @@ namespace CustomerMaintenance
 
                 //7c.CustomerList object Save()
                 //Tepper, 17JUN2022
-                customers.Save();
+                //customers.Save();  --EX13.3.4a1
 
-                FillCustomerListBox();
+                //FillCustomerListBox(); --EX13.3.4a1
             }
         }
 
@@ -110,9 +122,9 @@ namespace CustomerMaintenance
 
                     //7c.CustomerList object Save()
                     //Tepper, 17JUN2022
-                    customers.Save();
-                    
-                    FillCustomerListBox();
+                    //customers.Save(); --EX13.3.4a2
+
+                    //FillCustomerListBox(); --EX13.3.4a2
                 }
             }
         }
