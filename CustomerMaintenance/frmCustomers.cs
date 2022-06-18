@@ -51,7 +51,7 @@ namespace CustomerMaintenance
 
         private void frmCustomers_Load(object sender, EventArgs e)
         {
-            //Ex13-3.4a
+            //Ex13-3.4a,b
             customers.Changed += customers =>
 
             //7b.Use CustomerList object Fill()
