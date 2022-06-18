@@ -67,7 +67,10 @@ namespace CustomerMaintenance
             Customer customer = addCustomerForm.GetNewCustomer();
             if (customer != null)
             {
-                customers.Add(customer);
+                
+                //Ex13-2.3a + operator
+                //Tepper, 17JUN2022
+                customers += customer;
 
                 //7c.CustomerList object Save()
                 //Tepper, 17JUN2022
@@ -89,7 +92,9 @@ namespace CustomerMaintenance
                     MessageBoxButtons.YesNo);
                 if (button == DialogResult.Yes)
                 {
-                    customers.Remove(customer);
+                    //Ex13-2.3b - operator
+                    //Tepper, 17JUN2022
+                    customers -= customer;
 
                     //7c.CustomerList object Save()
                     //Tepper, 17JUN2022
