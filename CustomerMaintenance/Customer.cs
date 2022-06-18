@@ -29,7 +29,8 @@ namespace CustomerMaintenance
 		{
 		}
 
-		public Customer(string firstName, string lastName, string email)
+		public Customer(string firstName, 
+			string lastName, string email)
 		{
 			this.FirstName = firstName;
 			this.LastName = lastName;
@@ -48,7 +49,8 @@ namespace CustomerMaintenance
 				if (value.Length > 30)
 				{
 					throw new ArgumentException(
-						"Maximum length of first name is 30 characters.");
+						"Maximum length of first " +
+                        "name is 30 characters.");
 				}
 				firstName = value;
 			}
@@ -67,7 +69,8 @@ namespace CustomerMaintenance
 				if (value.Length > 30)
 				{
 					throw new ArgumentException(
-						"Maximum length of last name is 30 characters.");
+						"Maximum length of last " +
+                        "name is 30 characters.");
 				}
 				lastName = value;
 			}
@@ -86,12 +89,16 @@ namespace CustomerMaintenance
 				if (value.Length > 30)
 				{
 					throw new ArgumentException(
-						"Maximum length of email address is 30 characters.");
+						"Maximum length of email " +
+                        "address is 30 characters.");
 				}
 				email = value;
 			}
 		}
 
-		public string GetDisplayText() => firstName + " " + lastName + ", " + email;
+		public string GetDisplayText() => 
+			firstName + " " + 
+			lastName + ", " + 
+			email;
 	}
 }
