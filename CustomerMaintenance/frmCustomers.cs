@@ -60,7 +60,19 @@ namespace CustomerMaintenance
                 lstCustomers.Items.Add(c.GetDisplayText());
             }
         }
-
+/* ************************************************
+* CIS123: Intro to Object-oriented Programming
+* Murach C#, 7th ed. pp. 456 - 458
+* Chapter 13: How to work with indexers
+*    delegates, events & operators
+* Dominique Tepper, 17JUN2022
+* 
+* Exercise 13-2
+* 3. Modify frmCustomer to use operator instead of
+*    methods
+*    a. Add()
+*    b. Remove()
+* ************************************************/
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddCustomer addCustomerForm = new frmAddCustomer();
