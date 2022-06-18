@@ -23,6 +23,11 @@ using System.Text;
  *          2. Remove(customer)
  *          3. Fill()
  *          4. Save()
+ *          
+ * Exercise 13-2
+ * 2. Add overloaded CustomerList class
+ *	  a.	+		adds customers
+ *	  b.	-		removes customers
  * ************************************************/
 
 namespace CustomerMaintenance
@@ -71,5 +76,16 @@ namespace CustomerMaintenance
 		//6d-4. Save()
 		public void Save() => CustomerDB.SaveCustomers(customers);
 
+		public static CustomerList operator +(CustomerList c1, Customer c)
+		{
+			c1.Add(c);
+			return c1;
+		}
+
+		public static CustomerList operator -(CustomerList c1, Customer c)
+		{
+			c1.Remove(c);
+			return c1;
+		}
 	}
 }
