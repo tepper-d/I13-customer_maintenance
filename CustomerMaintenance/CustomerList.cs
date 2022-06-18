@@ -76,12 +76,16 @@ namespace CustomerMaintenance
 		//6d-4. Save()
 		public void Save() => CustomerDB.SaveCustomers(customers);
 
+		//13-2.2a. + operator
+		//Tepper, 17JUN2022
 		public static CustomerList operator +(CustomerList c1, Customer c)
 		{
 			c1.Add(c);
 			return c1;
 		}
 
+		//13-2.2b. - operator
+		//Tepper, 17JUN2022
 		public static CustomerList operator -(CustomerList c1, Customer c)
 		{
 			c1.Remove(c);
