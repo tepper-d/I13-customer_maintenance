@@ -28,6 +28,12 @@ using System.Text;
  * 2. Add overloaded CustomerList class
  *	  a.	+		adds customers
  *	  b.	-		removes customers
+ *	  
+ * Exercise 13-3
+ * 2. Add ChangeHandler delegate to CustomerList
+ *    class.
+ *    a. method with void return type
+ *    b. CustomerList parameter
  * ************************************************/
 
 namespace CustomerMaintenance
@@ -36,6 +42,12 @@ namespace CustomerMaintenance
 	{
 		//5b. private list
 		private List<Customer> customers;
+
+
+		//Ex13-3.2a. delegate void return type
+		//Tepper, 17JUN2022
+		public delegate void ChangeHandler(CustomerList customers);
+		public event ChangeHandler Changed;
 
 		//6a. constructor
 		public CustomerList()
