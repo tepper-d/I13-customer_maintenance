@@ -48,9 +48,10 @@ namespace CustomerMaintenance
 		private List<Customer> customers;
 
 
-		//Ex13-3.2a. delegate void return type
+		//Ex13-3.2a,b. delegate void return type
 		//Tepper, 17JUN2022
-		public delegate void ChangeHandler(CustomerList customers);
+		public delegate void ChangeHandler
+			(CustomerList customers);
 		public event ChangeHandler Changed;
 
 		//6a. constructor
